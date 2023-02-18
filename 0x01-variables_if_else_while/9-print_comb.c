@@ -9,12 +9,13 @@ int main(void)
 {
 	int i;
 	/* for loop*/
-	putchar(48);
-	for (i = 49 ; i <= 57 ; i++)
+	for (i = 48 ; i <= 57 ; i++)
 	{
+		putchar(i);
+		if (i == 57)
+			break;
 		putchar(44);
 		putchar(32);
-		putchar(i);
 	}
 	putchar('\n');
 	return (0);
