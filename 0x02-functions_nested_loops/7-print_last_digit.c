@@ -2,16 +2,18 @@
 
 /**
  * print_last_digit - a function that prints the last digit of a number.
- *@n: nunmber
+ *@k: nunmber
  *
  * Return: the value of the last digit
  */
-int print_last_digit(int n)
+int print_last_digit(int k)
 {
-	int i;
+	int i = k % 10;
 
-	i = n % 10;
-	if (n < 0)
-		i = -i;
-	return (i);
+	if (i < 0)
+		i = i * -1;
+
+	_putchar(i + '0');
+
+	return (0);
 }

@@ -1,4 +1,6 @@
+#include "main.h"
 #include <stdio.h>
+
 /**
  * _putchar  - putchar function
  * @c: is the character to print
@@ -7,6 +9,5 @@
  */
 int  _putchar(char c)
 {
-	putchar(c);
-	return (0);
+	return (write(1, &c, 1));
 }
