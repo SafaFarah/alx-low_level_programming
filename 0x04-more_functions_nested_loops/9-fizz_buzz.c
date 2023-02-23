@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
  * main - Entry point
@@ -24,6 +23,7 @@ int main(void)
 		else if (i % 15 == 0)
 		{
 			printf("FizzBuzz");
+		}
 		else
 		{
 			printf("%d", i);
