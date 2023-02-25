@@ -28,7 +28,7 @@ if (l == j && l  == k)
 {
 continue;
 }
-if ((l >  j && k >= i) || (i == 48))
+if ((l >  j && k >= i) || (i == 48 && j == 48))
 {
 putchar(i);
 putchar(j);
