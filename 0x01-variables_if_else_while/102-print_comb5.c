@@ -22,9 +22,13 @@ for (j = 48 ; j < 57 ; j++)
 for (k = 48 ; k <= 57 ; k++)
 {
 /* for loop*/
-for (l = 49 ; l <= 57 ; l++)
+for (l = 48 ; l <= 57 ; l++)
 {
-if (l >  j && k >= i)
+if (l == 48 && k == 48)
+{
+continue;
+}
+if ((l >  j && k >= i) || (i == j))
 {
 putchar(i);
 putchar(j);
