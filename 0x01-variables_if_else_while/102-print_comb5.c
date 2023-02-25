@@ -24,7 +24,7 @@ for (k = 48 ; k <= 57 ; k++)
 /* for loop*/
 for (l = 48 ; l <= 57 ; l++)
 {
-if (l == j)
+if (l == j && l  == k)
 {
 continue;
 }
