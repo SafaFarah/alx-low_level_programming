@@ -24,11 +24,11 @@ for (k = 48 ; k <= 57 ; k++)
 /* for loop*/
 for (l = 48 ; l <= 57 ; l++)
 {
-if (l == 48 && k == 48)
+if (l == j)
 {
 continue;
 }
-if ((l >  j && k >= i) || (i == j))
+if ((l >  j && k >= i) || (i == 48))
 {
 putchar(i);
 putchar(j);
