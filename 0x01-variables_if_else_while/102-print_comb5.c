@@ -9,38 +9,24 @@ int main(void)
 {
 int i;
 int j;
-int k;
-int l;
 
 /* for loop*/
-for (i = 48 ; i <= 57 ; i++)
+for (i = 0 ; i < 100 ; i++)
 {
 /* for loop*/
-for (j = 48 ; j < 57 ; j++)
+for (j = 0 ; j < 100 ; j++)
 {
-/* for loop */
-for (k = 48 ; k <= 57 ; k++)
+if (j > i)
 {
-/* for loop*/
-for (l = 48 ; l <= 57 ; l++)
-{
-if (l == j && l  == k)
-{
-continue;
-}
-if ((l >  j && k >= i) || (i == 48 && j == 48))
-{
-putchar(i);
-putchar(j);
+putchar(i / 10 + '0');
+putchar(i % 10 + '0');
 putchar(32);
-putchar(k);
-			putchar(l);
-if (j == 56 && i == 57)
+putchar(j / 10 + '0');
+putchar(j % 10 + '0');
+if (i == 89)
 	break;
 putchar(44);
 putchar(32);
-}
-}
 }
 }
 }
