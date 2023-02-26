@@ -23,7 +23,7 @@ putchar(i % 10 + '0');
 putchar(32);
 putchar(j / 10 + '0');
 putchar(j % 10 + '0');
-if (i == 89)
+if (i == 98)
 	break;
 putchar(44);
 putchar(32);
