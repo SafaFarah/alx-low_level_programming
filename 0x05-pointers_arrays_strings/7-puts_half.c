@@ -9,6 +9,7 @@ void puts_half(char *str)
 	int count = 0;
 	int j = 0;
 	int odd = 0;
+	int n = 0;
 
 	while (*(str + i) != '\0')
 	{
@@ -22,10 +23,13 @@ void puts_half(char *str)
 		else
 			continue;
 	}
-	odd = odd +1;
-	for (;odd < count; odd++)
+	if (odd % 2 == 0)
 	{
-		_putchar(*(str + odd));
+		odd++;
+	}
+	for (n = odd; n < count; n++)
+	{
+		_putchar(*(str + n));
 	}
 	_putchar('\n');
 }
