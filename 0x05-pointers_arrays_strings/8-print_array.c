@@ -1,6 +1,5 @@
 #include "main.h"
-#include <stdin.h>
-
+#include <stdio.h>
 /**
  * print_array - a function that prints n elements of an array of integers
  * @a: int pointer
