@@ -23,12 +23,10 @@ void puts_half(char *str)
 		else
 			continue;
 	}
-	if (odd % 2 != 0)
+	odd = odd +1;
+		for (;odd < count; odd++)
 	{
-		n = (count - 1) / 2;
-		for (; n < count; n++)
-	{
-		_putchar(*(str + n));
+		_putchar(*(str + odd));
 	}
 	}
 	_putchar('\n');
