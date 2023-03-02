@@ -9,10 +9,10 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int i;
-	int count;
-	int j;
-	int length;
+	int i = 0;
+	int count = 0;
+	int j = 0;
+	int length = 0;
 	int k;
 	int l = 0;
 
@@ -27,10 +27,11 @@ char *_strcat(char *dest, char *src)
 		j++;
 		length++;
 	}
-	for (k = count; k <= (count + length); k++)
+	for (k = count; k < (count + length); k++)
 	{
-		desk[k] = src[l];
+		dest[k] = src[l];
 		l++;
 	}
+	dest[k] = '\0';
 	return (dest);
 }
