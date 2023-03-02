@@ -29,7 +29,9 @@ char *_strncpy(char *dest, char *src, int n)
 	for (k = 0; k < n; k++)
 	{
 		dest[k] = src[k];
-		if (k > length || k > count)
+		if (k > length)
+			dest[k] = '\0';
+		if (k > count)
 			break;
 	}
 	return (dest);
