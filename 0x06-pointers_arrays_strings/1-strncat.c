@@ -6,7 +6,7 @@
  * @src: string
  * @n: number
  *
- * Return: string
+ * Return: char
  */
 char *_strncat(char *dest, char *src, int n)
 {
@@ -25,6 +25,5 @@ char *_strncat(char *dest, char *src, int n)
 		dest[k] = src[l];
 		l++;
 	}
-	dest[k] = '\0';
 	return (dest);
 }
