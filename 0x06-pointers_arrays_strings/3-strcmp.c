@@ -9,8 +9,28 @@
  */
 int _strcmp(char *s1, char *s2)
 {
+	int i = 0;
+	int count = 0;
+	int j = 0;
+	int length = 0;
 	int n;
+	int w;
 
-	n = s1[0] - s2[0];
-	return (n);
+	while (*(s1 + i) != '\0')
+	{
+		count++;
+		i++;
+	}
+	while (*(s2 + j) != '\0')
+	{
+		length++;
+		j++;
+	}
+	for (n = 0; n <= count; n++)
+	{
+		if (s1[n] != s2[n])
+			break;
+	}
+	w = s1[n] - s2[n];
+	return (w);
 }
