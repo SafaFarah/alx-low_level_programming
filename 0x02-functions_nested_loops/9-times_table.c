@@ -17,18 +17,23 @@ void times_table(void)
 			j = k * l;
 			if (j > 9)
 			{
+				_putchar(44);
+				_putchar(32);
 				_putchar(j / 10 + '0');
 				_putchar(j % 10 + '0');
 			}
 			if (j <= 9)
 			{
-				_putchar(32);
-				_putchar(j + '0');
+				if (j == 0)
+					_putchar(j + '0');
+				else
+				{
+					_putchar(44);
+					_putchar(32);
+					_putchar(32);
+					_putchar(j + '0');
+				}
 			}
-			if (l == 9)
-				break;
-			_putchar(44);
-			_putchar(32);
 		}
 		_putchar('\n');
 	}
