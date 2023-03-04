@@ -18,7 +18,7 @@ int main(void)
 	{
 		c = a + b;
 		if (count == 95)
-			printf("%lu", c);
+			printf("%lu,", c);
 		else
 			printf("%lu, ", c);
 		a = b;
