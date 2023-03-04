@@ -12,12 +12,12 @@ int main(void)
 	int c;
 	int count;
 
-	printf("%d", a);
-	printf("%d", b);
+	printf("%d, ", a);
+	printf("%d, ", b);
 	for (count = 0; count < 48; count++)
 	{
 		c = a + b;
-		printf("%d", c);
+		printf("%d, ", c);
 		a = b;
 		b = c;
 	}
