@@ -19,10 +19,11 @@ void print_to_98(int n)
 			else
 				printf("%d, ", k);
 		}
+
 	}
 	else
 	{
-		for (k = n; k <= 98; k++)
+		for (k = n; k <= 98; k--)
 		{
 			if (k == 98)
 				printf("%d", k);
@@ -30,5 +31,6 @@ void print_to_98(int n)
 				printf("%d, ", k);
 		}
 	}
+	printf("\n");
 }
 
