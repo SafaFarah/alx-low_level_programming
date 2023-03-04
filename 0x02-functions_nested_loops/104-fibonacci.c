@@ -7,20 +7,20 @@
  */
 int main(void)
 {
-	long a = 1;
-	long b = 2;
-	long  c;
+	unsigned int a = 1;
+	unsigned int b = 2;
+	unsigned int c;
 	int count;
 
-	printf("%ld, ", a);
-	printf("%ld, ", b);
+	printf("%u, ", a);
+	printf("%u, ", b);
 	for (count = 0; count < 96; count++)
 	{
 		c = a + b;
 		if (count == 95)
-			printf("%ld", c);
+			printf("%u", c);
 		else
-			printf("%ld, ", c);
+			printf("%u, ", c);
 		a = b;
 		b = c;
 	}
