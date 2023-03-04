@@ -7,17 +7,17 @@
  */
 int main(void)
 {
-	unsigned long long int a = 1;
-	unsigned long long int b = 2;
-	unsigned long long int c;
+	long a = 1;
+	long b = 2;
+	long  c;
 	int count;
 
-	printf("%llu, ", a);
-	printf("%llu, ", b);
+	printf("%ld, ", a);
+	printf("%ld, ", b);
 	for (count = 0; count < 48; count++)
 	{
 		c = a + b;
-		printf("%llu, ", c);
+		printf("%ld, ", c);
 		a = b;
 		b = c;
 	}
