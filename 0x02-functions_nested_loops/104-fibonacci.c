@@ -12,15 +12,15 @@ int main(void)
 	double c;
 	int count;
 
-	printf("%lf, ", a);
-	printf("%lf, ", b);
+	printf("%f, ", a);
+	printf("%f, ", b);
 	for (count = 0; count < 96; count++)
 	{
 		c = a + b;
 		if (count == 95)
-			printf("%lf,", c);
+			printf("%f,", c);
 		else
-			printf("%lf, ", c);
+			printf("%f, ", c);
 		a = b;
 		b = c;
 	}
