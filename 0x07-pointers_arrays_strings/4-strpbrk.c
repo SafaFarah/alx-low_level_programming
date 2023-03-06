@@ -13,9 +13,9 @@ char *_strpbrk(char *s, char *accept)
 	int n;
 	int flag = 0;
 
-	for (k = 0; s[k] >= '\0'; k++)
+	for (k = 0; s[k] > '\0'; k++)
 	{
-		for (n = 0; accept[n] >= '\0'; n++)
+		for (n = 0; accept[n] > '\0'; n++)
 		{
 			if (s[k] == accept[n])
 			{
