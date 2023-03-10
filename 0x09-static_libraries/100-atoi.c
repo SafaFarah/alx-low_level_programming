@@ -8,6 +8,9 @@
  */
 int _atoi(char *s)
 {
+	int i = 0;
+	if (*(s + i ) == '\0')
+		i++;
 	return (0);
 }
 
