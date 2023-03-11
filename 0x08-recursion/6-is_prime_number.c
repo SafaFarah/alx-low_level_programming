@@ -27,5 +27,8 @@ int _prime_num(int n, int i)
  */
 int is_prime_number(int n)
 {
-	return  (_prime_num(n, 2));
+	if (n < 2)
+		return (0);
+	else
+		return  (_prime_num(n, 2));
 }
