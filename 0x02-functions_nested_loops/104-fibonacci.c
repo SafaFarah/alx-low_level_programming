@@ -7,20 +7,20 @@
  */
 int main(void)
 {
-	double a  = 1;
-	double b = 2;
-	double c;
+	long int a  = 1;
+	long int b = 2;
+	long int c;
 	int count;
 
-	printf("%f, ", a);
-	printf("%f, ", b);
+	printf("%ld, ", a);
+	printf("%ld, ", b);
 	for (count = 0; count < 96; count++)
 	{
 		c = a + b;
 		if (count == 95)
-			printf("%f,", c);
+			printf("%ld", c);
 		else
-			printf("%f, ", c);
+			printf("%ld, ", c);
 		a = b;
 		b = c;
 	}
