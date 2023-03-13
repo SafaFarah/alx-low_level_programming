@@ -7,19 +7,19 @@
  */
 int main(void)
 {
-	unsigned long large;
-	unsigned long i;
-	unsigned long n = 612852475143;
+	unsigned long int n = 612852475143;
+	unsigned long int i;
 
-	/* for loop*/
-	for (i = (n - 1) ; i >= 0; i--)
+	for (i = 2; i < n; i++)
 	{
-		if (n % i == 0)
+		while (n > 1)
 		{
-			large = i;
-			break;
+			if (n % i == 0)
+				n = n / i;
+			else
+				break;
 		}
 	}
-	printf("%lu\n", large);
+	printf("%lu", n);
 	return (0);
 }
