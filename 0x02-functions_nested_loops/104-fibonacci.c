@@ -24,7 +24,7 @@ int main(void)
 	a2 = a % i;
 	b1 = b / i;
 	b2 = b % i;
-	for (count = 91; count < 99; ++count)
+	for (count = 92; count < 99; ++count)
 	{
 		printf(", %lu", b1);
 		printf("%lu", b2);
