@@ -6,7 +6,7 @@
  */
 void print_number(int n)
 {
-	int i = 100000;
+	int i = 100000000;
 	int m;
 
 	if (n == 0)
