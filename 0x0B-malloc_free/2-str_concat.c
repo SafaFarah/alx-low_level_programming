@@ -39,11 +39,11 @@ char *str_concat(char *s1, char *s2)
 	while (i1 < len1)
 	{
 		s3[i1] = s1[i1];
-		i1++
+		i1++;
 	}
 	while (i1 < (len1 + len2))
 	{
-		s3[i1] = s2[i2]
+		s3[i1] = s2[i2];
 			i2++;
 	}
 	s3[i1] = '\0';
