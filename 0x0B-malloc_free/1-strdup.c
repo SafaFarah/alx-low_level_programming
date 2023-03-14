@@ -26,12 +26,13 @@ char *_strdup(char *str)
 	if (s == NULL)
 		return (NULL);
 	s1 = s;
-	while (i < len)
+	while (*str)
 	{
-		s1[i] = srt[i];
-		i++;
+		*s1 = *srt;
+		s1++;
+		srt++;
 	}
-	s1[i] = '\0';
+	*s1 = '\0';
 	return (s);
 }
 
