@@ -18,8 +18,6 @@ char *str_concat(char *s1, char *s2)
 	int i1 = 0;
 	char *s3;
 
-	if (s1 == NULL && s2 == NULL)
-		return (NULL);
 	while (*(s1 + i) != '\0')
 	{
 		i++;
