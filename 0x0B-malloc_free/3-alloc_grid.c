@@ -11,7 +11,7 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int *arry;
+	int *array;
 	int i;
 	int j;
 
@@ -27,4 +27,3 @@ int **alloc_grid(int width, int height)
 		}
 	return (array);
 }
-
