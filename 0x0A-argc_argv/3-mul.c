@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	if (argc < 3)
 	{
 		printf("Error\n");
-		return (1);
+		exit(1);
 	}
 	printf("%d\n", a * b);
 	exit(EXIT_SUCCESS);
