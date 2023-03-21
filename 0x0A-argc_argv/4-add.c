@@ -3,6 +3,25 @@
 #include<ctype.h>
 
 /**
+ * is_num - check if it number
+ * @s: string
+ *
+ * Return: zero
+ */
+int is_num(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (!isdigit(s[i]))
+			return (0);
+	}
+	return (1);
+}
+
+
+/**
  * main - main function
  * @argc: count
  * @argv: string
@@ -21,7 +40,7 @@ int main(int argc, char **argv)
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (isdigit(*argv[i]))
+			if (is_num(argv[i]))
 			{
 				num = atoi(argv[i]);
 				sum = sum + num;
