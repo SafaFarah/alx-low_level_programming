@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<ctype.h>
 
 /**
  * main - main function
@@ -10,20 +11,28 @@
  */
 int main(int argc, char **argv)
 {
+	int i;
+	int num;
 	int sum = 0;
 
-	if (argc < 0)
-		printf("%d\n", 0);
-	if (*argv < '48' || *argv > '57')
+	if (argc < 2)
+		printf("0\n");
+	else
 	{
-		printf("Error\n");
-		return (1);
+		for (i = 1; i < argc; i++)
+		{
+			if (isdigit(*argv[i]))
+			{
+				num = atoi(argv[i]);
+				sum = sum + num;
+			}
+			else
+			{
+				printf("Erorr\n");
+				return (1);
+			}
+		}
+		printf("%d\n", sum);
 	}
-	while (argc--)
-	{
-		sum = sum + (int)*argv;
-		*argv++;
-	}
-	printf("%d\n", sum);
-	exit(EXIT_SUCCESS);
+	return (0);
 }
