@@ -28,5 +28,5 @@ list_t *add_node_end(list_t **head, const char *str)
 		new = new->next;
 	}
 	new->next = temp;
-	return (temp);
+	return (*temp);
 }
