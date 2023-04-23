@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "main.h"
+#include <unistd.h>
 
 /**
  * read_textfile - a function that reads a text file and prints it
@@ -21,7 +22,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (pf == -1)
 		return (0);
 	buf = (char *)malloc(letters * sizeof(char));
-	r = read(fp, buf, letters);
+	r = read(pf, buf, letters);
 	w = write(STDOUT_FILENO, buf, r);
 	if (w < 0)
 		return (0);
