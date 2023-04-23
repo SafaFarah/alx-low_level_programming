@@ -30,7 +30,7 @@ int create_file(const char *filename, char *text_content)
 			len++;
 		}
 	}
-	w = write(filename, text_content, len);
+	w = write(pf, text_content, len);
 	if (w < 0)
 		return (-1);
 	close(pf);
