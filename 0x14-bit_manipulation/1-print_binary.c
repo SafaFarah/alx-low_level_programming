@@ -2,7 +2,7 @@
 
 /**
  * print_binary - function that prints the binary
- * @n: unsigned long intger number
+ * @n: unsigned long intger number.
  */
 void print_binary(unsigned long int n)
 {
