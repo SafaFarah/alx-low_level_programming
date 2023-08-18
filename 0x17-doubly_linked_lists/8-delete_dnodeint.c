@@ -30,9 +30,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		if (len != 1)
 			temp2->next->prev = NULL;
 		*head = temp2->next;
-		free(temp2);
-		temp2 = NULL;
-		return (1);
+		return (delete_node(temp2));
 	}
 	while (i < len)
 	{
@@ -42,12 +40,24 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			temp3->next = temp2->next;
 			if (index != len - 1)
 				temp2->next->prev = temp3->next;
-			free(temp2);
-			temp2 = NULL;
-			return (1);
+			return (delete_node(temp2));
 		}
 		temp2 = temp2->next;
 		i++;
 	}
 	return (-1);
+}
+
+
+/**
+ * delete_node - deletes the node.
+ * @h: pointer to node of list.
+ *
+ * Return: 1 if it succeeded..
+ */
+int delete_node(dlistint_t *h)
+{
+	free(h);
+	h = NULL;
+	return (1);
 }
