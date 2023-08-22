@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * add - adds two numbers
  * @a: first number
