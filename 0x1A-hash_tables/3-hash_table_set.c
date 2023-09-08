@@ -16,7 +16,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 
 	item = create_item(key, value);
-	index = key_index((const unsigned char)key);
+	index = key_index((const unsigned char *)key, ht->size);
 	current_item = ht->array[index];
 	if (current_item == NULL)
 	{
@@ -32,7 +32,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		}
 		else
 		{
-			return (handle_collision(ht, item));
+			return (handle_collision(ht, index, item));
 		}
 		return (0);
 	}
@@ -79,7 +79,9 @@ int handle_collision(hash_table_t *ht, unsigned long index, hash_node_t *item)
 		head = malloc(sizeof(hash_node_t));
 		if (head == NULL)
 			return (0);
-		head->item = item;
+		head->key = item->key;
+		head->value = item->value;
+		head->next = NULL;
 		ht->array[index] = head;
 		return (1);
 	}
@@ -103,7 +105,7 @@ hash_node_t *node_insert(hash_node_t *list, hash_node_t *item)
 	hash_node_t *head;
 	hash_node_t *node;
 
-	if (head == NULL)
+	if (list == NULL)
 	{
 		head = malloc(sizeof(hash_node_t));
 		head->key = item->key;
@@ -116,7 +118,7 @@ hash_node_t *node_insert(hash_node_t *list, hash_node_t *item)
 	{
 		node = malloc(sizeof(hash_node_t));
 		node->key = item->key;
-		head->value = item->value;
+		node->value = item->value;
 		node->next = list;
 		list = node;
 		return (list);
