@@ -11,30 +11,41 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *item;
-	hash_node_t *current_item;
 	unsigned long int index;
 
-
-	item = create_item(key, value);
+	if (key == NULL || ht == NULL)
+		return (0);
 	index = key_index((const unsigned char *)key, ht->size);
-	current_item = ht->array[index];
-	if (current_item == NULL)
+	item = ht->array[index];
+	if (item == NULL)
 	{
+		item = create_item(key, value);
+		if (item == NULL)
+			return (0);
+		item->next = NULL;
 		ht->array[index] = item;
 		return (1);
 	}
-	else
+	while (item != NULL)
 	{
-		if (strcmp(current_item->key, key) == 0)
+		if (strcmp(item->key, key) == 0)
 		{
-			strcpy(ht->array[index]->value, value);
+			if (strcmp(item->value, value) == 0)
+				return (1);
+			item->value = value_update(item->value);
+			strcpy(item->value, value);
 			return (1);
 		}
-		else
-		{
-			return (handle_collision(ht, index, item));
-		}
-		return (0);
+		item = item->next;
+	}
+	if (item == NULL)
+	{
+		item = create_item(key, value);
+		if (item == NULL)
+			return (0);
+		item->next = ht->array[index];
+		ht->array[index] = item;
+		return (1);
 	}
 	return (0);
 }
@@ -52,75 +63,31 @@ hash_node_t *create_item(const char *key, const char *value)
 	hash_node_t *item;
 
 	item = malloc(sizeof(hash_node_t));
+	if (item == NULL)
+		return (NULL);
 	item->key = malloc(strlen(key) + 1);
+	if (item->key == NULL)
+		return (NULL);
 	item->value = malloc(strlen(value) + 1);
-	item->next = NULL;
+	if (item->value == NULL)
+		return (NULL);
 	strcpy(item->key, key);
 	strcpy(item->value, value);
 	return (item);
 }
 
-/**
- * handle_collision - handle case of collision.
- * @ht : the hash table.
- * @index: the index of key.
- * @item: item for adding to hash table.
- *
- * Return: 1 if it succeeded, 0 otherwise.
- */
-
-int handle_collision(hash_table_t *ht, unsigned long index, hash_node_t *item)
-{
-	hash_node_t *head;
-
-	head = ht->array[index];
-	if (head == NULL)
-	{
-		head = malloc(sizeof(hash_node_t));
-		if (head == NULL)
-			return (0);
-		head->key = item->key;
-		head->value = item->value;
-		head->next = NULL;
-		ht->array[index] = head;
-		return (1);
-	}
-	else
-	{
-
-		ht->array[index] = node_insert(head, item);
-		return (1);
-	}
-}
 
 /**
- * node_insert - a function insters hash node into list.
- * @list: list of nodes in hash table.
- * @item: item for adding to hash table.
+ * value_update - a function frees  and reallocates value.
+ * @value: value needs reallocated
  *
- * Return: head of list node.
+ * Return: value afer reallocated.
  */
-hash_node_t *node_insert(hash_node_t *list, hash_node_t *item)
+char *value_update(char *value)
 {
-	hash_node_t *head;
-	hash_node_t *node;
-
-	if (list == NULL)
-	{
-		head = malloc(sizeof(hash_node_t));
-		head->key = item->key;
-		head->value = item->value;
-		head->next = NULL;
-		list = head;
-		return (list);
-	}
-	else
-	{
-		node = malloc(sizeof(hash_node_t));
-		node->key = item->key;
-		node->value = item->value;
-		node->next = list;
-		list = node;
-		return (list);
-	}
+	free(value);
+	value = malloc(strlen(value) + 1);
+	if (value == NULL)
+		return (NULL);
+	return (value);
 }
