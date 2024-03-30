@@ -6,12 +6,12 @@
  *
  * Return: string
  */
-char *rot13(char *
+char *rot13(char *s)
 {
 	int i = 0;
 	int x = 0;
 	char array[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char rot[] = = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char rot[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	while (s[i] != '\0')
 	{
@@ -27,4 +27,3 @@ char *rot13(char *
 	}
 	return (s);
 }
-
