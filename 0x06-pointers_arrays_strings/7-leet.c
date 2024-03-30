@@ -18,7 +18,10 @@ char *leet(char *s)
 		for (x = 0; x < 5; x++)
 		{
 			if (s[i] == array[x] || s[i] == array[x] - 32)
+			{
 				s[i] = l[x] + '0';
+				break;
+			}
 		}
 		i++;
 	}
