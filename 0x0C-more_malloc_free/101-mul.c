@@ -30,9 +30,10 @@ int is_digit(const char *str)
 int main(int argc, char *argv[])
 {
 	char *ptr1, *ptr2;
-	long num1, num2;
+	unsigned long num1, num2;
 
-	if (argc != 3) {
+	if (argc != 3)
+	{
 		fprintf(stderr, "Error\n");
 		exit(98);
 	}
